@@ -25,17 +25,25 @@
 </head>
 <body>
 <div id="wrapper">
+	<form name="podlove-button-feed-test" id="podlove-button-feed-test-form" method="POST">
 	<h1>Podlove Subscribe Button Feed Testing Tool</h1>
 	<h2>Description</h2>
-	This tool adresses <strong>developers</strong> who want to test their Podcatcher <abbr title="Uniform Resource Identifier">URI</abbr> interaction.
+	This tool adresses <strong>developers</strong> who want to test their Podcatcher <abbr title="Uniform Resource Identifier">URI</abbr>/<abbr title="Uniform Resource Locator">URL</abbr> interaction.
 	<p>
 		Providing your <abbr title="Uniform Resource Identifier">URI</abbr>, will show you four links which make use of <code>IPv4</code>, <code>IPv6</code>, <code>http</code> and <code>https</code>.
 	</p>
 
 	<h2>Configuration</h2>
-	Please provide your <abbr title="Uniform Resource Identifier">URI</abbr> scheme:
+	Please provide your <abbr title="Uniform Resource Identifier">URI</abbr> scheme or your subscription <abbr title="Uniform Resource Locator">URL</abbr>:
 	<p id="provide-uri">
-		<input id="provided-uri" placeholder="my-uri-scheme://" value="<?php echo ( ! empty($_GET['uri']) ? $_GET['uri'] : '' ); ?>" />
+		<input name="provided" id="provided" placeholder="my-uri-scheme://" value="<?php echo ( ! empty($_GET['uri']) ? $_GET['uri'] : '' ); ?>" />
+	</p>
+	<p id="">
+		<input type="checkbox" id="perform_post_request" <?php echo (isset($_GET['post']) ? 'checked' : ''); ?>/><label for="perform_post_request">Perform <code>POST</code> request</label>
+		<input type="hidden" name="url" value="" />
+		<input type="hidden" name="title" value="" />
+		<input type="hidden" name="subtitle" value="" />
+		<input type="hidden" name="image" value="" />
 	</p>
 	
 	<h2>Test Links</h2>
@@ -70,6 +78,7 @@
 	<h2>Bookmark</h2>
 	Use the provided link if you want to quickly check the behaviour on other devices.
 	<p><input id="share" value="" type="text" readonly /></p>
+	</form>
 </div>
 <span id="copyright">&copy; <a href="http://podlove.org">Podlove</a> <?php echo date("Y"); ?></span>
 </body>
