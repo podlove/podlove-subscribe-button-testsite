@@ -61,16 +61,24 @@
 				<td>IPv4, http</td>
 			</tr>
 			<tr>
-				<td class="url-row" data-feed-url="http://<?php echo $host['ipv4']; ?>"><a href="https://<?php echo $host['ipv4']; ?>">https://<?php echo $host['ipv4']; ?></a></td>
+				<td class="url-row" data-feed-url="https://<?php echo $host['ipv4']; ?>"><a href="https://<?php echo $host['ipv4']; ?>">https://<?php echo $host['ipv4']; ?></a></td>
 				<td>IPv4, https</td>
+			</tr>
+			<tr>
+				<td class="url-row" data-feed-url="<?php echo $host['ipv4']; ?>"><a href="https://<?php echo $host['ipv4']; ?>"><?php echo $host['ipv4']; ?></a></td>
+				<td>IPv4</td>
 			</tr>
 			<tr>
 				<td class="url-row" data-feed-url="http://<?php echo $host['ipv6']; ?>"><a href="http://<?php echo $host['ipv6']; ?>">http://<?php echo $host['ipv6']; ?></a></td>
 				<td>IPv6, http</td>
 			</tr>
 			<tr>
-				<td class="url-row" data-feed-url="http://<?php echo $host['ipv6']; ?>"><a href="https://<?php echo $host['ipv6']; ?>">https://<?php echo $host['ipv6']; ?></a></td>
+				<td class="url-row" data-feed-url="https://<?php echo $host['ipv6']; ?>"><a href="https://<?php echo $host['ipv6']; ?>">https://<?php echo $host['ipv6']; ?></a></td>
 				<td>IPv6, https</td>
+			</tr>
+			<tr>
+				<td class="url-row" data-feed-url="<?php echo $host['ipv6']; ?>"><a href="https://<?php echo $host['ipv6']; ?>"><?php echo $host['ipv6']; ?></a></td>
+				<td>IPv6</td>
 			</tr>
 		</tbody>
 	</table>
