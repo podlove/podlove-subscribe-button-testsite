@@ -1,0 +1,122 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@charset "UTF-8";
+@import "compass/reset";
+@import "compass/css3";
+
+
+$font-color: #333;
+$link-color: #007CCF;
+$body-background-color: #E7E7E7;
+$container-shadow-color: #CCC;
+$container-background-color: #FFF;
+
+$code-font: 16px/1em 'Menlo', 'Lucida Console';
+$body-font: 16px/2.5em 'Lucida Grande', Helvetica, sans;
+
+body {
+	font: $body-font;
+	color: $font-color;
+	background-color: $body-background-color;
+	text-align: center;
+}
+
+a {
+	color: $link-color;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+code, abbr {
+	font: $code-font;
+}
+
+h1 {
+	font: {
+		size: 2.5em;
+	}
+}
+
+h2 {
+	margin: 2em 0 2em 0;
+	font-size: 1.2em;
+	border: {
+		top: 1px solid $container-shadow-color;
+		bottom: 1px solid $container-shadow-color;
+	}
+}
+
+abbr {
+	border-bottom: 1px dotted green;
+	cursor: help;
+}
+
+table {
+	min-width: 90%;
+	margin: 0px auto 0px auto;
+
+	tbody {
+		border: {
+			top: 1px solid $font-color;
+			bottom: 2px solid $font-color;
+		}
+	}
+
+	thead {
+		border-top: 2px solid $font-color;
+	}
+}
+
+p#provide-uri {
+	&, input {
+		font: $code-font;
+	}
+
+	input {
+		text-align: center;
+		height: 2em;
+	}
+}
+
+input#share {
+	padding: 5px;
+	width: 80%;
+	font: $code-font;
+	text-align: center;
+	height: 1em;
+}
+
+#wrapper, #copyright {
+	width: 800px;
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	padding: 25px;
+}
+
+#wrapper {
+	margin: {
+		top: 50px;
+		bottom: 0px;		
+	}
+	padding-top: 130px;
+	background:	url('../images/podlove-logo-1.2-600x600.png') $container-background-color no-repeat center 30px;
+	background-size: 80px;
+	@include box-shadow($container-shadow-color 1px 1px 8px);
+}
+
+#copyright {
+	font-size: 0.8em;
+	display: block;
+	padding-top: 0px;
+
+	a {
+		color: $font-color;
+	}
+}
