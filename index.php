@@ -41,9 +41,9 @@
 	<p id="">
 		<input type="checkbox" id="perform_post_request" <?php echo (isset($_GET['post']) ? 'checked' : ''); ?>/><label for="perform_post_request">Perform <code>POST</code> request</label>
 		<input type="hidden" name="url" value="" />
-		<input type="hidden" name="title" value="" />
-		<input type="hidden" name="subtitle" value="" />
-		<input type="hidden" name="image" value="" />
+		<input type="hidden" name="title" value="Podlove" />
+		<input type="hidden" name="subtitle" value="Personal Media Development" />
+		<input type="hidden" name="image" value="http://metaebene.me/podlove/files/2013/01/podlove-logo-1.2-600x600.png" />
 	</p>
 	
 	<h2>Test Links</h2>
