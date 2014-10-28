@@ -16,7 +16,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8'>
-<title>Podlove Subscribe Button Feed Testing Tool</title>
+<title>Podlove Subscription URL Testing Tool</title>
 
 <link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
 
@@ -26,15 +26,17 @@
 <body>
 <div id="wrapper">
 	<form name="podlove-button-feed-test" id="podlove-button-feed-test-form" method="POST">
-	<h1>Podlove Subscribe Button Feed Testing Tool</h1>
+	<h1>Subscription URL Testing Tool</h1>
 	<h2>Description</h2>
-	This tool adresses <strong>developers</strong> who want to test their Podcatcher <abbr title="Uniform Resource Identifier">URI</abbr>/<abbr title="Uniform Resource Locator">URL</abbr> interaction.
 	<p>
-		Providing your <abbr title="Uniform Resource Identifier">URI</abbr>, will show you four links which make use of <code>IPv4</code>, <code>IPv6</code>, <code>http</code> and <code>https</code>.
+	This tool adresses <strong>developers</strong> who want to test their Podcast Client's <abbr title="Uniform Resource Locator">Subscription URL</abbr> behaviour to make it work together with the <a href="http://podlove.org/podlove-subscribe-button/">Podlove Subscribe Button</a>.
+	</p>
+	<p>
+		Enter your <abbr title="Uniform Resource Identifier">URI</abbr> scheme below and responding links will be created. There are three basic URL syntax variants: a <code>http</code> feed with and without explicit mentioning of the protocol and an <code>https</code> feed. All three are also available in a version pointing to a URL that can only be accessed via IPv6.
 	</p>
 
 	<h2>Configuration</h2>
-	Please provide your <abbr title="Uniform Resource Identifier">URI</abbr> scheme or your subscription <abbr title="Uniform Resource Locator">URL</abbr>:
+	Please provide your <abbr title="Uniform Resource Identifier">URI</abbr> scheme / subscription <abbr title="Uniform Resource Locator">URL</abbr> prefix:
 	<p id="provide-uri">
 		<input name="provided" id="provided" placeholder="my-uri-scheme://" value="<?php echo ( ! empty($_GET['uri']) ? $_GET['uri'] : '' ); ?>" />
 	</p>
@@ -47,7 +49,9 @@
 	</p>
 	
 	<h2>Test Links</h2>
-	Use the provided Links to test your URL-Scheme with your client.
+	<p>
+	Use the provided subscription URLs to test your URL-Scheme with your client. Please note the https feed is currently secured by a self-signed certificate only so it might produce an error message.
+	</p>
 	<table>
 		<thead>
 			<tr>
@@ -57,28 +61,28 @@
 		</thead>
 		<tbody>
 			<tr>
+				<td class="url-row" data-feed-url="<?php echo $host['ipv4']; ?>"><a href="https://<?php echo $host['ipv4']; ?>"><?php echo $host['ipv4']; ?></a></td>
+				<td>No protocol included (IPv4 only)</td>
+			</tr>
+			<tr>
 				<td class="url-row" data-feed-url="http://<?php echo $host['ipv4']; ?>"><a href="http://<?php echo $host['ipv4']; ?>">http://<?php echo $host['ipv4']; ?></a></td>
-				<td>IPv4, http</td>
+				<td>with http protocol (IPv4 only)</td>
 			</tr>
 			<tr>
 				<td class="url-row" data-feed-url="https://<?php echo $host['ipv4']; ?>"><a href="https://<?php echo $host['ipv4']; ?>">https://<?php echo $host['ipv4']; ?></a></td>
-				<td>IPv4, https</td>
-			</tr>
-			<tr>
-				<td class="url-row" data-feed-url="<?php echo $host['ipv4']; ?>"><a href="https://<?php echo $host['ipv4']; ?>"><?php echo $host['ipv4']; ?></a></td>
-				<td>IPv4</td>
-			</tr>
-			<tr>
-				<td class="url-row" data-feed-url="http://<?php echo $host['ipv6']; ?>"><a href="http://<?php echo $host['ipv6']; ?>">http://<?php echo $host['ipv6']; ?></a></td>
-				<td>IPv6, http</td>
-			</tr>
-			<tr>
-				<td class="url-row" data-feed-url="https://<?php echo $host['ipv6']; ?>"><a href="https://<?php echo $host['ipv6']; ?>">https://<?php echo $host['ipv6']; ?></a></td>
-				<td>IPv6, https</td>
+				<td>with https protocol (IPv4 only)</td>
 			</tr>
 			<tr>
 				<td class="url-row" data-feed-url="<?php echo $host['ipv6']; ?>"><a href="https://<?php echo $host['ipv6']; ?>"><?php echo $host['ipv6']; ?></a></td>
-				<td>IPv6</td>
+				<td>No protocol included (IPv6 only)</td>
+			</tr>
+			<tr>
+				<td class="url-row" data-feed-url="http://<?php echo $host['ipv6']; ?>"><a href="http://<?php echo $host['ipv6']; ?>">http://<?php echo $host['ipv6']; ?></a></td>
+				<td>with http protocol (IPv6 only)</td>
+			</tr>
+			<tr>
+				<td class="url-row" data-feed-url="https://<?php echo $host['ipv6']; ?>"><a href="https://<?php echo $host['ipv6']; ?>">https://<?php echo $host['ipv6']; ?></a></td>
+				<td>with https protocol (IPv6 only)</td>
 			</tr>
 		</tbody>
 	</table>
