@@ -29,7 +29,7 @@
 	<h1>Subscription URL Testing Tool</h1>
 	<h2>Description</h2>
 	<p>
-	This tool adresses <strong>developers</strong> who want to test their Podcast Client's <abbr title="Uniform Resource Locator">Subscription URL</abbr> behaviour to make it work together with the <a href="http://podlove.org/podlove-subscribe-button/">Podlove Subscribe Button</a>.
+	This tool adresses <strong>developers</strong> who want to test their Podcast Client's Subscription <abbr title="Uniform Resource Locator">URL</abbr> behaviour to make it work together with the <a href="http://podlove.org/podlove-subscribe-button/">Podlove Subscribe Button</a>.
 	</p>
 	<p>
 		Enter your <abbr title="Uniform Resource Identifier">URI</abbr> scheme below and responding links will be created. There are three basic URL syntax variants: a <code>http</code> feed with and without explicit mentioning of the protocol and an <code>https</code> feed. All three are also available in a version pointing to a URL that can only be accessed via IPv6.
